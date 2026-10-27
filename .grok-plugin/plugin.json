@@ -1,0 +1,22 @@
+{
+  "name": "warmgtm",
+  "version": "1.0.0",
+  "description": "Run warm outbound from your WarmGTM account: campaign analytics, leads, inbox replies, posts, Social Signals, tags, CRM sync and webhooks, through WarmGTM's hosted MCP server.",
+  "author": {
+    "name": "WarmGTM",
+    "email": "support@warmgtm.com"
+  },
+  "repository": "https://github.com/chandrkant/warmgtm-plugin",
+  "homepage": "https://warmgtm.com",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": [
+    "warmgtm",
+    "outbound",
+    "sales",
+    "prospecting",
+    "campaigns",
+    "crm",
+    "mcp"
+  ]
+}

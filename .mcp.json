@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "warmgtm": {
+      "type": "http",
+      "url": "https://mcp.warmgtm.com/mcp",
+      "note": "WarmGTM's hosted MCP server. Sign in through the browser (OAuth) with your WarmGTM email and password, or with a WarmGTM API key."
+    }
+  }
+}
