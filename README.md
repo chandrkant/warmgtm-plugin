@@ -2,7 +2,7 @@
 
 # WarmGTM plugin
 
-Connect Grok Bot or Cursor to your [WarmGTM](https://warmgtm.com) workspace. Ask about your outreach in plain language, then review and approve what goes out.
+Connect Grok Bot, Cursor or ChatGPT to your [WarmGTM](https://warmgtm.com) workspace. Ask about your outreach in plain language, then review and approve what goes out.
 
 - **Analytics:** campaign funnels, reply rates, and what is running right now
 - **Inbox:** who replied, full conversation threads, drafted replies you approve before sending
@@ -22,15 +22,26 @@ The plugin is free to install. It works with your existing WarmGTM account and t
 | `.mcp.json`, `mcp.json` | Points to WarmGTM's hosted MCP server, `https://mcp.warmgtm.com/mcp` |
 | `skills/warmgtm/SKILL.md` | Tells the assistant how to use the tools, and which actions need your approval |
 | `assets/` | Logo |
+| `openai/` | OpenAI (ChatGPT / Codex) manifest and `mcp.json`, packaged by `scripts/build-openai-zip.sh` |
 
 ## Connecting
 
-1. Install the plugin from the Grok Bot or Cursor marketplace.
+1. Install the plugin from the Grok Bot, Cursor or ChatGPT plugin directory.
 2. When asked to connect, a WarmGTM sign-in page opens in your browser. Sign in with your WarmGTM email and password.
    - Signed up with Google? Choose **Use an API key instead** and paste a key from WarmGTM **Settings → API Keys**.
 3. That's it. The connection uses OAuth 2.1 (PKCE), and tokens refresh on their own.
 
 To disconnect, remove the plugin, or deactivate the key named *MCP connector (created by OAuth sign-in)* in WarmGTM **Settings → API Keys**.
+
+## OpenAI package
+
+The ChatGPT directory takes a ZIP rather than a repo. Build it with:
+
+```sh
+./scripts/build-openai-zip.sh
+```
+
+This copies `openai/plugin.json`, `openai/mcp.json`, `skills/` and `assets/logo.png` into one package, checks the directory's limits (field lengths, 5 positive and 3 negative review cases, square PNG icons, OAuth with no client secret), and writes `dist/warmgtm-openai-<version>.zip`. Bump `version` in `openai/plugin.json` before each re-upload.
 
 ## You stay in control
 
